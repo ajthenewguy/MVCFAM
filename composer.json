@@ -1,0 +1,24 @@
+{
+    "name": "MVCFAM/App Implementation",
+    "description": "This is an experiment with PSR-4 and package creation",
+    "keywords": ["MVC"],
+    "authors": [
+        {
+            "name": "Allen McCabe",
+            "email": "allenmccabe@gmail.com"
+        }
+    ],
+    "require": {
+        "aura/sqlquery": "2.6.*"
+    },
+    "require-dev": {
+        "composer/composer": "dev-master",
+        "symfony/console": "dev-master",
+        "phpunit/phpunit": "4.0.*"
+    },
+	"autoload": {
+		"psr-4": {
+			"MVCFAM\\App\\": "app/src/"
+		}
+	}
+}
