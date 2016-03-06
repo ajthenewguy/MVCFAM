@@ -1,1 +1,4 @@
 
+[submodule "vendor"]
+	path = vendor
+	url = https://github.com/ajthenewguy/mf-vendor-packages.git
