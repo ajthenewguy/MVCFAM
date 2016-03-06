@@ -1,0 +1,24 @@
+<?php namespace App;
+/**
+ * Application route registry
+ */
+
+$routes = array();
+$routes['/'] = 'Home/index';
+
+$routes['/admin'] = 'AdminPage/index';
+
+$routes['/admin/routes'] = 'AdminPage/routes';
+$routes['get:/admin/route/create'] = 'AdminPage/route_create';
+$routes['post:/admin/route/create'] = 'AdminPage/process_route_create';
+$routes['post:/admin/route/delete'] = 'AdminPage/process_route_delete';
+$routes['get:/admin/route/edit/(:any)'] = 'AdminPage/route_edit';
+$routes['post:/admin/route/edit/(:any)'] = 'AdminPage/process_route_edit';
+$routes['get:/admin/settings'] = 'AdminPage/settings';
+$routes['get:/admin/setting/create'] = 'AdminPage/setting_create';
+$routes['post:/admin/setting/create'] = 'AdminPage/process_setting_create';
+$routes['get:/projects'] = 'ProjectsPage/index';
+$routes['get:/admin/models'] = 'Model/index';
+
+
+return $routes;
