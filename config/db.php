@@ -4,12 +4,12 @@
  */
 
 $db = array();
-$db['enable'] = true;
-$db['driver'] = 'mysql';
-$db['host'] = '127.0.0.1';
-$db['name'] = 'mvcfam';
-$db['user'] = 'root';
-$db['pass'] = '2ws3ed';
+$db['enable'] = !!$_ENV['DB_ENABLED'];
+$db['driver'] = $_ENV['DB_DRIVER'];
+$db['host'] = $_ENV['DB_HOST'];
+$db['name'] = $_ENV['DB_NAME'];
+$db['user'] = $_ENV['DB_USER'];
+$db['pass'] = $_ENV['DB_PASS'];
 
 
 return $db;
