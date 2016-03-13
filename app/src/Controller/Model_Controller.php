@@ -124,11 +124,11 @@ class Model_Controller extends Admin_Controller {
 					$edit_fields_link = \MVCFAM\App\html_button('Edit Fields', \MVCFAM\App\url($this->fields_edit_path.$Model->name()), 'pure-button button-xsmall'.($ModelFieldCount ? '' : ' button-secondary'));
 					if ($ModelMigration_exists) {
 						$uri = \MVCFAM\App\url($this->table_create_path);
-						$button_text = 'Run Table Migration'.($remaining_steps_for_db_table > 0 ? ' (2/2)' : '');
+						$button_text = 'x Run Migration';
 						$confirm_message_text = 'Run database table migration?';
 					} else {
 						$uri = \MVCFAM\App\url($this->migration_create_path);
-						$button_text = 'Create Table Migration'.($remaining_steps_for_db_table > 0 ? ' (1/2)' : '');
+						$button_text = '+ Create Migration';
 						$confirm_message_text = 'Create database table migration?';
 					}
 
@@ -150,11 +150,11 @@ class Model_Controller extends Admin_Controller {
 						$drop_table_link .= sprintf('onsubmit="return confirm(\'This will DROP the table %s and all rows forever. Continue?\')" ', $Model->table());
 						$drop_table_link .= 'style="display:inline-block;margin:0 auto;">
 							<input type="hidden" name="Model" value="'.$Model->name().'" />'
-							.\MVCFAM\App\html_button('Drop Database Table', false, 'pure-button pure-button-primary button-xsmall button-error control', 'submit').
+							.\MVCFAM\App\html_button('Drop Table', false, 'pure-button pure-button-primary button-xsmall button-error control', 'submit').
 							'</form>';
 
 						$records_link_url = ($ModelRecordCount ? $this->view_records_path.$Model->name() : '/admin/model/record/create/'.$Model->name());
-						$view_records_link = \MVCFAM\App\html_button(($ModelRecordCount ? 'View Records' : 'Create New '.$Model->name()), \MVCFAM\App\url($records_link_url), 'pure-button button-xsmall'.($ModelRecordCount ? '' : ' button-secondary'));
+						$view_records_link = \MVCFAM\App\html_button(($ModelRecordCount ? Html\Icon::create('database').' View Records' : 'Create New '.$Model->name()), \MVCFAM\App\url($records_link_url), 'pure-button button-xsmall'.($ModelRecordCount ? '' : ' button-secondary'));
 					}
 				}
 			}
