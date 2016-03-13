@@ -35,11 +35,15 @@ require(APP_HELPERS_PATH.'/html.php');
 require(APP_HELPERS_PATH.'/url.php');
 require(APP_HELPERS_PATH.'/view.php');
 
+use \Dotenv\Dotenv;
 use MVCFAM\App\Db\Db;
 use MVCFAM\App\Db\DbPermission;
 use MVCFAM\App\Db\Migration;
 
 putenv('COMPOSER_HOME=' . VENDOR_PATH . '/bin/composer');
+
+$dotenv = new Dotenv(ROOT_PATH);
+$dotenv->load();
 
 Session::init();
 Route::$routes = include(ROUTE_FILE_PATH);
